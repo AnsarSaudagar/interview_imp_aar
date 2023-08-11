@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        label {
+            display: flex;
+            width: 50%;
+            justify-content: space-between;
+        }
+
+        input,
+        select {
+            width: 80%;
+        }
+
+        .last {
+            width: 51%;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgb(190, 188, 188);
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        @media (max-width:750px) {
+            .last {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <form class="container main ">
+        <h1>Registration Form</h1>
+        <div class="row">
+            <label class="col-sm mt-3">
+                <p>First Name:</p>
+                <input type="text" required>
+            </label>
+            <label class="col-sm mt-3">
+                <p>Last Name:</p>
+                <input type="text" required>
+            </label>
+        </div>
+        <div class="row">
+            <label class="col-sm mt-3">
+                <p>Country:</p>
+                <select name="country" required>
+                    <option value="">Country</option>
+                    <option value="Indian">Indian</option>
+                    <option value="Usa">Usa</option>
+                    <option value="Austrailia">Austrailia</option>
+                </select>
+            </label>
+            <label class="col-sm mt-3">
+                <p>State:</p>
+                <select name="state" required>
+                    <option value="">State</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                </select>
+            </label>
+        </div>
+        <div class="row">
+            <label class="col-sm mt-3">
+                <p>Address 1:</p>
+                <input type="text" required>
+            </label>
+            <label class="col-sm mt-3">
+                <p>Address 2:</p>
+                <input type="text" required>
+            </label>
+        </div>
+        <div class="row">
+            <label class="col-sm mt-3">
+                <p>Mobile No:</p>
+                <input type="text" id="mobile" required>
+            </label>
+            <label class="col-sm mt-3">
+                <p>Email:</p>
+                <input type="email" required>
+            </label>
+        </div>
+        <hr>
+        <div class="row">
+            <label class="col-sm mt-3">
+                <p>Username:</p>
+                <input type="text" required>
+            </label>
+            <label class="col-sm mt-3">
+                <p>Password:</p>
+                <input type="password" id="password" required>
+            </label>
+        </div>
+        <div class="row last">
+            <label class="col-sm mt-3">
+                <p>Confirm Password:</p>
+                <input type="text" id="cpassword" required>
+            </label>
+
+        </div>
+        <div class="mt-3">
+            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="reset" class="btn btn-primary">Reset</button>
+        </div>
+    </form>
+
+    <table class="container table-responsive w-100 mt-4">
+        <tr>
+            <th style="width:10%; background-color: rgb(190, 190, 238);">Name</th>
+            <th style="width:10%; background-color: rgb(190, 190, 238);">Last Name</th>
+            <th style="width:30%; background-color: rgb(190, 190, 238);">Email</th>
+            <th style="width:10%; background-color: rgb(190, 190, 238);">Address</th>
+            <th style="width:10%; background-color: rgb(190, 190, 238);">Status</th>
+        </tr>
+        <tr>
+            <td>Aarti</td>
+            <td>Mishra</td>
+            <td>aarti@gmail.com</td>
+            <td>Mumbai</td>
+            <td><button class="btn btn-primary">Action</button></td>
+        </tr>
+        <tr>
+            <td>Swati</td>
+            <td>Mishra</td>
+            <td>swati@gmail.com</td>
+            <td>Kalyan</td>
+            <td><button class="btn btn-primary">Action</button></td>
+        </tr>
+        <tr>
+            <td>Jyoti</td>
+            <td>Mishra</td>
+            <td>jyoti@gmail.com</td>
+            <td>Dombivali</td>
+            <td><button class="btn btn-primary">Action</button></td>
+        </tr>
+    </table>
+</body>
+
+<script>
+    const mobile = document.querySelector('#mobile')
+    const password = document.querySelector('#password')
+    const cpassword = document.querySelector('#cpassword')
+
+    mobile.addEventListener('input', () => {
+        if (mobile.value.length < 10) {
+            mobile.style.border = '1px solid red'
+        } else {
+
+            mobile.style.border = '1px solid black'
+        }
+    })
+
+    cpassword.addEventListener('input', () => {
+        if (password.value !== cpassword.value) {
+            cpassword.style.border = '1px solid red'
+        } else {
+
+            cpassword.style.border = '1px solid black'
+        }
+    })
+
+</script>
+
+</html>
